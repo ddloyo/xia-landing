@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>XIA · Insights × Analytics</title>
-<meta name="description" content="XIA pone un dueño fraccional a tus datos, para que la respuesta llegue a tiempo de importar. Data storytelling, dashboards y analítica accionable para PyMEs en crecimiento.">
+<meta name="description" id="metaDesc" content="XIA puts a fractional owner on your data, so the answer lands while it still matters. Data storytelling, dashboards, and actionable analytics for growing SMBs.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23163832'/%3E%3Ccircle cx='30' cy='30' r='7' fill='none' stroke='%2371A8A3' stroke-width='4'/%3E%3Ccircle cx='70' cy='30' r='7' fill='%2371A8A3'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%2371A8A3'/%3E%3Ccircle cx='30' cy='70' r='7' fill='%2371A8A3'/%3E%3Cline x1='70' y1='30' x2='50' y2='50' stroke='%2371A8A3' stroke-width='4'/%3E%3Cline x1='50' y1='50' x2='30' y2='70' stroke='%2371A8A3' stroke-width='4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,24 +60,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     position:sticky; top:0; z-index:20; background:rgba(246,239,225,0.92); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--border-soft);
   }
-  .nav-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:14px;}
-  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);}
-  .brand img{width:34px; height:34px; border-radius:8px; display:block;}
-  .brand-word{font-family:"Barlow Condensed", sans-serif; font-weight:800; font-size:1.15rem; letter-spacing:0.01em;}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; gap:14px; padding-block:14px; flex-wrap:wrap; row-gap:10px;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); flex:0 0 auto;}
+  .brand img{width:34px; height:34px; border-radius:8px; display:block; flex:0 0 auto;}
+  .brand-word{font-family:"Barlow Condensed", sans-serif; font-weight:800; font-size:1.15rem; letter-spacing:0.01em; white-space:nowrap;}
   .brand-word span{color:var(--teal-dark); font-weight:600;}
+  @media (max-width:420px){ .brand-word span{display:none;} }
   nav.links{display:flex; gap:26px; font-size:0.94rem; font-weight:600;}
   nav.links a{color:var(--ink-soft); text-decoration:none;}
   nav.links a:hover{color:var(--ink);}
+  .nav-right{display:flex; align-items:center; gap:14px; margin-left:auto;}
+  @media (max-width:480px){ .nav-right .btn-primary{padding:9px 14px; font-size:0.85rem;} }
   .btn{
     display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:0.92rem;
     padding:10px 18px; border-radius:7px; text-decoration:none; white-space:nowrap;
-    font-family:"Source Sans 3", sans-serif;
+    font-family:"Source Sans 3", sans-serif; border:none; cursor:pointer;
   }
   .btn-primary{background:var(--ink); color:var(--cream);}
   .btn-primary:hover{background:#0E2622;}
   .btn-gold{background:var(--gold); color:var(--ink);}
   .btn-gold:hover{background:#A5761F;}
   @media (max-width:760px){ nav.links{display:none;} }
+
+  .lang-toggle{
+    display:flex; border:1px solid var(--border); border-radius:100px; padding:3px; background:var(--white); flex:0 0 auto;
+  }
+  .lang-toggle button{
+    border:none; background:transparent; cursor:pointer; font-family:"Barlow Condensed",sans-serif;
+    font-weight:700; font-size:0.78rem; letter-spacing:0.03em; padding:5px 12px; border-radius:100px; color:var(--ink-soft);
+  }
+  .lang-toggle button.active{background:var(--ink); color:var(--cream);}
 
   section{padding-block:76px;}
   section.tight{padding-block:56px;}
@@ -97,7 +109,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .timeline-cap{font-family:"Barlow Condensed",sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; font-size:0.76rem; color:var(--ink-soft); margin-bottom:6px;}
 
   .segments{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:40px; border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
-  .segments h4{font-family:"Barlow Condensed",sans-serif; font-eyebrow:0.7rem;}
   .seg-label{font-family:"Barlow Condensed",sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; font-size:0.74rem; color:var(--teal-dark); margin-bottom:16px; display:block;}
   .seg{padding:22px 22px; border-right:1px solid var(--border);}
   .seg:last-child{border-right:none;}
@@ -109,7 +120,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .contact-inline{display:flex; gap:20px; flex-wrap:wrap; font-weight:600;}
   .contact-inline a{color:var(--ink); text-decoration:none;}
 
-  /* PROBLEMA */
+  /* PROBLEM */
   .symptoms{list-style:none; margin:0 0 40px; padding:0; border-top:1px solid var(--border);}
   .symptoms li{display:flex; gap:18px; padding:16px 0; border-bottom:1px solid var(--border);}
   .symptoms .num{flex:0 0 auto; font-family:"Barlow Condensed",sans-serif; font-weight:800; color:var(--gold); font-size:1rem; width:2.4ch;}
@@ -144,10 +155,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color:var(--ink); border-radius:0 8px 8px 0;
   }
 
-  /* EVIDENCIA */
+  /* EVIDENCE */
   section.evidence{background:var(--cream-alt);}
   .evidence-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px 48px;}
-  .stat-card{}
   .stat-card svg{display:block; margin-bottom:14px;}
   .stat-card p.stat-text{font-size:1rem; font-weight:600;}
   .stat-card .source{font-family:"Barlow Condensed",sans-serif; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:8px; display:block;}
@@ -160,7 +170,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .evidence-callout p{max-width:52ch; font-size:0.98rem;}
   .evidence-callout .go{font-family:"Barlow Condensed",sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--teal-dark); white-space:nowrap;}
 
-  /* SERVICIOS */
+  /* SERVICES */
   .services{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:36px;}
   .service-card{background:var(--white); border:1px solid var(--border-soft); border-radius:12px; padding:30px; box-shadow:var(--shadow);}
   .service-card .tag{font-family:"Barlow Condensed",sans-serif; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--teal-dark); font-weight:700;}
@@ -211,7 +221,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   details p{margin-top:10px; font-size:0.94rem; color:var(--ink-soft);}
   @media (max-width:760px){ .deliv-faq{grid-template-columns:1fr;} }
 
-  /* PORTAFOLIO */
+  /* PORTFOLIO */
   section.portfolio{background:var(--cream-alt);}
   .proj-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:34px;}
   .proj-card{background:var(--white); border:1px solid var(--border-soft); border-radius:10px; padding:20px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px;}
@@ -251,12 +261,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="brand-word">XIA <span>· Insights × Analytics</span></span>
     </a>
     <nav class="links">
-      <a href="#problema">Problema</a>
-      <a href="#evidencia">Evidencia</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#portafolio">Portafolio</a>
+      <a href="#problema" data-k="nav1">Problem</a>
+      <a href="#evidencia" data-k="nav2">Evidence</a>
+      <a href="#servicios" data-k="nav3">Services</a>
+      <a href="#portafolio" data-k="nav4">Portfolio</a>
     </nav>
-    <a class="btn btn-primary" href="#contacto">Agendar diagnóstico</a>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+        <button type="button" id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+      <a class="btn btn-primary" href="#contacto" data-k="navCta">Book a diagnostic</a>
+    </div>
   </div>
 </header>
 
@@ -266,58 +282,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hero" id="top">
     <div class="container">
       <span class="eyebrow">XIA · Insights × Analytics</span>
-      <h1>Preguntas un lunes.<br>
-        <span class="gold">Responde el jueves.</span></h1>
-      <p class="subhead">El viernes ya decidiste sin ella.</p>
-      <p class="body">No es que falten datos. Es que <strong>nadie es dueño</strong> de traducirlos en una respuesta antes de que la decisión se tome sin ella. XIA pone un dueño fraccional a tus datos — para que la respuesta llegue a tiempo de importar.</p>
+      <h1><span data-k="h1a">Ask Monday.</span><br>
+        <span class="gold" data-k="h1b">Know by Thursday.</span></h1>
+      <p class="subhead" data-k="subhead">By Friday, you've already decided without it.</p>
+      <p class="body" data-k="heroBody">It's not a data problem. It's an ownership problem — nobody's job is to turn your data into an answer before the decision gets made without it. XIA puts <strong>a fractional owner</strong> on your data, so the answer lands while it still matters.</p>
 
       <div class="timeline-wrap">
-        <div class="timeline-cap">Ciclo real de una pregunta · reportado por equipos comerciales y de dirección, ago 2026</div>
-        <svg viewBox="0 0 720 110" width="720" role="img" aria-label="Línea de tiempo: la pregunta se hace el lunes, la respuesta llega el jueves, el viernes ya se decidió sin ella">
+        <div class="timeline-cap" data-k="tlCap">The real life of a question · reported by sales and leadership teams, Aug 2026</div>
+        <svg viewBox="0 0 720 110" width="720" role="img" aria-label="Timeline: the question gets asked Monday, the answer lands Thursday, by Friday the decision is already made without it" data-k-attr="aria-label:tlSvg">
           <line x1="40" y1="58" x2="640" y2="58" stroke="var(--border)" stroke-width="2"/>
           <line x1="40" y1="58" x2="490" y2="58" stroke="var(--teal)" stroke-width="2"/>
-          <!-- LUN MAR MIE -->
+          <!-- MON TUE WED -->
           <circle cx="40" cy="58" r="8" fill="var(--ink)"/>
           <circle cx="215" cy="58" r="8" fill="var(--ink)"/>
           <circle cx="365" cy="58" r="8" fill="var(--ink)"/>
-          <!-- JUE -->
+          <!-- THU -->
           <circle cx="490" cy="58" r="15" fill="none" stroke="var(--gold)" stroke-width="2"/>
           <circle cx="490" cy="58" r="9" fill="var(--gold)"/>
-          <text x="490" y="24" text-anchor="middle" font-family="Source Sans 3" font-weight="700" font-size="15" fill="var(--ink)">la respuesta llega</text>
-          <!-- VIE (off the working line, faded) -->
+          <text x="490" y="24" text-anchor="middle" font-family="Source Sans 3" font-weight="700" font-size="15" fill="var(--ink)" data-k="tlLands">the answer lands</text>
+          <!-- FRI (off the working line, faded) -->
           <line x1="490" y1="58" x2="640" y2="58" stroke="var(--border)" stroke-width="2" stroke-dasharray="3 4"/>
           <circle cx="640" cy="58" r="9" fill="none" stroke="var(--ink-soft)" stroke-width="2" opacity="0.6"/>
           <line x1="636" y1="54" x2="644" y2="62" stroke="var(--ink-soft)" stroke-width="1.6" opacity="0.6"/>
           <line x1="644" y1="54" x2="636" y2="62" stroke="var(--ink-soft)" stroke-width="1.6" opacity="0.6"/>
-          <text x="640" y="24" text-anchor="middle" font-family="Source Sans 3" font-style="italic" font-size="13" fill="var(--ink-soft)">ya decidiste sin ella</text>
-          <text x="40" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)">LUN</text>
-          <text x="215" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)">MAR</text>
-          <text x="365" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)">MIÉ</text>
-          <text x="490" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink)">JUE</text>
-          <text x="640" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)">VIE</text>
+          <text x="640" y="24" text-anchor="middle" font-family="Source Sans 3" font-style="italic" font-size="13" fill="var(--ink-soft)" data-k="tlDecided">you've already decided</text>
+          <text x="40" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)" data-k="dayMon">MON</text>
+          <text x="215" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)" data-k="dayTue">TUE</text>
+          <text x="365" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)" data-k="dayWed">WED</text>
+          <text x="490" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink)" data-k="dayThu">THU</text>
+          <text x="640" y="86" text-anchor="middle" font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="1" fill="var(--ink-soft)" data-k="dayFri">FRI</text>
         </svg>
       </div>
 
       <div class="segments">
         <div class="seg">
-          <span class="seg-label">Para quién es</span>
-          <h3>PyMEs en crecimiento</h3>
-          <p>Ya tienes datos, no una respuesta a tiempo.</p>
+          <span class="seg-label" data-k="forWhom">Who this is for</span>
+          <h3 data-k="seg1h">Growing SMBs</h3>
+          <p data-k="seg1p">You've got the data. Not a timely answer.</p>
         </div>
         <div class="seg">
           <span class="seg-label">&nbsp;</span>
-          <h3>Equipos comerciales</h3>
-          <p>Deciden cada semana con números que llegan tarde.</p>
+          <h3 data-k="seg2h">Sales teams</h3>
+          <p data-k="seg2p">Making weekly calls on numbers that show up late.</p>
         </div>
         <div class="seg">
           <span class="seg-label">&nbsp;</span>
-          <h3>Dirección sin área de datos</h3>
-          <p>Contratar equipo interno aún no aplica.</p>
+          <h3 data-k="seg3h">Leadership without a data team</h3>
+          <p data-k="seg3p">Hiring in-house isn't the next move yet.</p>
         </div>
       </div>
 
       <div class="hero-foot">
-        <span>Data storytelling · Dashboards · Analítica accionable — primera sesión de diagnóstico, sin costo.</span>
+        <span data-k="heroFootLine">Data storytelling · Dashboards · Actionable analytics — first diagnostic session, on us.</span>
         <div class="contact-inline">
           <a href="mailto:xianalytics20@gmail.com">xianalytics20@gmail.com</a>
           <a href="https://wa.me/525535666166" target="_blank" rel="noopener">WhatsApp +52 55 3566 6166</a>
@@ -326,69 +342,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- PROBLEMA -->
+  <!-- PROBLEM -->
   <section id="problema">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">02 · El problema</span>
-        <h2>Cada síntoma señala al mismo puesto vacío.</h2>
-        <p class="lede prose">No es falta de información: es falta de dueño. La pregunta se hace un lunes. La respuesta llega el jueves. Para el viernes, ya tomaste la decisión sin ella. Esto es lo que escuchamos, casi palabra por palabra, en más de diez conversaciones con equipos comerciales, dirección y finanzas.</p>
+        <span class="eyebrow" data-k="eyebrow2">02 · The problem</span>
+        <h2 data-k="probH2">Every symptom points to the same empty seat.</h2>
+        <p class="lede prose" data-k="probLede">It's not a data gap — it's an ownership gap. The question gets asked Monday. The answer shows up Thursday. By Friday, the decision's already been made without it. That's almost verbatim what we heard across more than ten conversations with sales, leadership, and finance teams.</p>
       </div>
 
       <ul class="symptoms">
-        <li><span class="num">01</span><p>Cada área llega con su propio número y la reunión se va en discutir cuál es el correcto.</p></li>
-        <li><span class="num">02</span><p>El reporte semanal toma horas en armarse… y para cuando está listo, ya cambió la situación.</p></li>
-        <li><span class="num">03</span><p>Hasta 3 días para conseguir un estatus simple, aunque ya invertiste en CRM y dashboards.</p></li>
-        <li><span class="num">04</span><p>Sabes que algo bajó, pero no por qué ni qué hacer al respecto.</p></li>
-        <li><span class="num">05</span><p>Nadie es dueño de traducir los datos en una respuesta: TI no se responsabiliza, el área no tiene el tiempo ni el rol para hacerlo.</p></li>
-        <li><span class="num">06</span><p>Contratar un equipo de datos interno todavía no se justifica.</p></li>
+        <li><span class="num">01</span><p data-k="sym1">Every team walks in with its own number, and the meeting turns into a fight over whose is right.</p></li>
+        <li><span class="num">02</span><p data-k="sym2">The weekly report takes hours to build — and by the time it's ready, the situation has already moved on.</p></li>
+        <li><span class="num">03</span><p data-k="sym3">Up to 3 days for a simple status update, even after investing in CRM and dashboards.</p></li>
+        <li><span class="num">04</span><p data-k="sym4">You know something dropped. You don't know why, or what to do about it.</p></li>
+        <li><span class="num">05</span><p data-k="sym5">Nobody owns turning data into an answer: IT won't take it on, and the business team has neither the time nor the mandate to.</p></li>
+        <li><span class="num">06</span><p data-k="sym6">Hiring a full data team in-house still doesn't pencil out.</p></li>
       </ul>
 
       <table class="shift-table">
-        <caption>Así se ve el cambio de dueño</caption>
+        <caption data-k="shiftCaption">What changes when someone owns it</caption>
         <tbody>
-          <tr><td class="before">Reportes que describen lo que pasó</td><td class="arrow">→</td><td class="after">Análisis que recomienda qué sigue</td></tr>
-          <tr><td class="before">Preguntas que tardan días en respuesta</td><td class="arrow">→</td><td class="after">Respuestas el mismo día que se necesitan</td></tr>
-          <tr><td class="before">Cada quien con su versión de la verdad</td><td class="arrow">→</td><td class="after">Un solo dueño, una sola fuente confiable</td></tr>
-          <tr><td class="before">Números sin contexto</td><td class="arrow">→</td><td class="after">Una historia: causa, efecto y decisión</td></tr>
-          <tr><td class="before">Contratar y entrenar un equipo</td><td class="arrow">→</td><td class="after">Un equipo de datos a demanda, con dueño desde el día uno</td></tr>
+          <tr><td class="before" data-k="shift1a">Reports on what already happened</td><td class="arrow">→</td><td class="after" data-k="shift1b">Analysis that tells you what's next</td></tr>
+          <tr><td class="before" data-k="shift2a">Questions that take days to answer</td><td class="arrow">→</td><td class="after" data-k="shift2b">Answers the same day you need them</td></tr>
+          <tr><td class="before" data-k="shift3a">Everyone with their own version of the truth</td><td class="arrow">→</td><td class="after" data-k="shift3b">One owner, one source you can trust</td></tr>
+          <tr><td class="before" data-k="shift4a">Numbers with no context</td><td class="arrow">→</td><td class="after" data-k="shift4b">A story: cause, effect, and what to do</td></tr>
+          <tr><td class="before" data-k="shift5a">Hiring and training a team</td><td class="arrow">→</td><td class="after" data-k="shift5b">An on-demand data team, owned from day one</td></tr>
         </tbody>
       </table>
 
       <div class="fit-grid">
         <div class="fit-col">
-          <h4>Sí, esto es para ti</h4>
+          <h4 data-k="fitYesH">This is for you if</h4>
           <ul>
-            <li><span class="mark yes">✓</span> Ya generas datos y reportes, aunque estén dispersos.</li>
-            <li><span class="mark yes">✓</span> Necesitas decidir esta semana, no el próximo trimestre.</li>
-            <li><span class="mark yes">✓</span> Quieres una respuesta a tiempo, no solo un dashboard más.</li>
+            <li><span class="mark yes">✓</span><span data-k="fitYes1">You're already generating data and reports, even if they're scattered.</span></li>
+            <li><span class="mark yes">✓</span><span data-k="fitYes2">You need to decide this week, not next quarter.</span></li>
+            <li><span class="mark yes">✓</span><span data-k="fitYes3">You want a timely answer, not just another dashboard.</span></li>
           </ul>
         </div>
         <div class="fit-col">
-          <h4>Probablemente no, todavía</h4>
+          <h4 data-k="fitNoH">Probably not yet, if</h4>
           <ul>
-            <li><span class="mark no">✕</span> Buscas migrar sistemas o instalar un ERP.</li>
-            <li><span class="mark no">✕</span> Aún no capturas información de tu operación.</li>
-            <li><span class="mark no">✕</span> Esperas un modelo predictivo antes de ordenar lo básico.</li>
+            <li><span class="mark no">✕</span><span data-k="fitNo1">You're looking to migrate systems or roll out an ERP.</span></li>
+            <li><span class="mark no">✕</span><span data-k="fitNo2">You're not yet capturing data from your operation.</span></li>
+            <li><span class="mark no">✕</span><span data-k="fitNo3">You want a predictive model before the basics are in order.</span></li>
           </ul>
         </div>
       </div>
 
-      <blockquote class="pull">No vendemos dashboards. Vendemos el momento en que la respuesta todavía importaba.</blockquote>
+      <blockquote class="pull" data-k="pullQuote">We don't sell dashboards. We sell the moment an answer still mattered.</blockquote>
     </div>
   </section>
 
-  <!-- EVIDENCIA -->
+  <!-- EVIDENCE -->
   <section class="evidence" id="evidencia">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">03 · La evidencia</span>
-        <h2>El costo de no tener dueño, medido.</h2>
+        <span class="eyebrow" data-k="eyebrow3">03 · The evidence</span>
+        <h2 data-k="evH2">The cost of no ownership, measured.</h2>
       </div>
 
       <div class="evidence-grid">
         <div class="stat-card">
-          <svg viewBox="0 0 260 110" width="260" role="img" aria-label="7 de cada 10 tableros corren sin que nadie los lea">
+          <svg viewBox="0 0 260 110" width="260" role="img" aria-label="7 out of 10 dashboards run with nobody reading them" data-k-attr="aria-label:statSvg1">
             <g>
               <circle cx="20" cy="20" r="12" fill="var(--gold)"/>
               <circle cx="56" cy="20" r="12" fill="var(--gold)"/>
@@ -402,26 +418,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <circle cx="164" cy="56" r="12" fill="none" stroke="var(--teal-tint)" stroke-width="3"/>
             </g>
           </svg>
-          <div class="stat-big">3 de 10</div>
-          <p class="stat-text">Siete de cada diez tableros que ya pagas están corriendo sin que nadie los lea.</p>
-          <span class="source">Fuente: Gartner — adopción real de herramientas de BI</span>
+          <div class="stat-big" data-k="stat1big">3 in 10</div>
+          <p class="stat-text" data-k="stat1text">Seven out of ten dashboards you're already paying for are running unread.</p>
+          <span class="source" data-k="stat1src">Source: Gartner — real-world BI tool adoption</span>
         </div>
 
         <div class="stat-card">
           <div class="stat-big" style="margin-bottom:10px;">55%</div>
-          <svg viewBox="0 0 300 40" width="300" role="img" aria-label="55% de las decisiones de negocio se toman de panza, sin dato que las respalde">
+          <svg viewBox="0 0 300 40" width="300" role="img" aria-label="55% of business decisions are made on gut feel, with no data behind them" data-k-attr="aria-label:statSvg2">
             <rect x="0" y="10" width="300" height="20" rx="4" fill="var(--teal-tint)"/>
             <rect x="0" y="10" width="165" height="20" rx="4" fill="var(--gold)"/>
             <text x="0" y="0" font-family="Barlow Condensed" font-size="12" fill="var(--ink-soft)">0%</text>
             <text x="300" y="0" text-anchor="end" font-family="Barlow Condensed" font-size="12" fill="var(--ink-soft)">100%</text>
           </svg>
-          <p class="stat-text" style="margin-top:12px;">de las decisiones de negocio se toman «de panza», sin dato que las respalde.</p>
-          <span class="source">Fuente: Domo — State of Data Culture</span>
+          <p class="stat-text" style="margin-top:12px;" data-k="stat2text">of business decisions are made on gut feel, with no data behind them.</p>
+          <span class="source" data-k="stat2src">Source: Domo — State of Data Culture</span>
         </div>
 
         <div class="stat-card">
-          <div class="stat-big" style="margin-bottom:10px;">3 días</div>
-          <svg viewBox="0 0 320 50" width="320" role="img" aria-label="3 días tarda hoy un estatus simple">
+          <div class="stat-big" style="margin-bottom:10px;" data-k="stat3big">3 days</div>
+          <svg viewBox="0 0 320 50" width="320" role="img" aria-label="3 days is how long a simple status update takes today" data-k-attr="aria-label:statSvg3">
             <line x1="20" y1="16" x2="300" y2="16" stroke="var(--border)" stroke-width="2"/>
             <circle cx="20" cy="16" r="4" fill="var(--ink-soft)"/>
             <circle cx="76" cy="16" r="4" fill="var(--ink-soft)"/>
@@ -436,139 +452,139 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <text x="244" y="40" text-anchor="middle" font-family="Barlow Condensed" font-size="13" fill="var(--ink-soft)">4</text>
             <text x="300" y="40" text-anchor="middle" font-family="Barlow Condensed" font-size="13" fill="var(--ink-soft)">5</text>
           </svg>
-          <p class="stat-text" style="margin-top:6px;">es lo que tarda hoy un estatus simple, en los equipos con los que hemos hablado.</p>
-          <span class="source">Fuente: conversaciones de campo XIA, ago 2026 (n=10+)</span>
+          <p class="stat-text" style="margin-top:6px;" data-k="stat3text">is how long a simple status update takes today, across the teams we've talked to.</p>
+          <span class="source" data-k="stat3src">Source: XIA field conversations, Aug 2026 (n=10+)</span>
         </div>
       </div>
 
       <div class="evidence-callout">
-        <p>Estos tres patrones se repiten cruzando industria y tamaño de empresa: la herramienta ya está pagada, la gobernanza no. Es exactamente la brecha que XIA existe para cerrar.</p>
-        <span class="go">Siguiente → cómo lo resolvemos</span>
+        <p data-k="evCallout">These three patterns repeat across industries and company sizes: the tool is already paid for; the ownership isn't. That's the exact gap XIA exists to close.</p>
+        <span class="go" data-k="evGo">Next → how we fix it</span>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  <!-- SERVICES -->
   <section id="servicios">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">04 · La manera</span>
-        <h2>Dos formas de poner un dueño en tus datos.</h2>
+        <span class="eyebrow" data-k="eyebrow4">04 · The approach</span>
+        <h2 data-k="svcH2">Two ways to put an owner on your data.</h2>
       </div>
 
       <div class="services">
         <div class="service-card">
-          <span class="tag">Proyecto puntual · primera versión en días</span>
+          <span class="tag" data-k="svc1tag">One-off project · first version in days</span>
           <h3>Data Storytelling Express</h3>
-          <p class="tagline">Tu reporte, convertido en la decisión — a tiempo para tomarla.</p>
+          <p class="tagline" data-k="svc1tagline">Your report, turned into the decision — in time to make it.</p>
           <ul>
-            <li>Diagnóstico de tus reportes actuales</li>
-            <li>1 reporte visual con análisis a fondo</li>
-            <li>Narrativa clara: qué pasa, por qué y qué hacer</li>
-            <li>Presentación ejecutiva lista para usar</li>
-            <li>Sesión de entrega de 45 minutos</li>
+            <li data-k="svc1li1">Audit of your current reports</li>
+            <li data-k="svc1li2">1 visual report with in-depth analysis</li>
+            <li data-k="svc1li3">A clear narrative: what's happening, why, and what to do</li>
+            <li data-k="svc1li4">An executive-ready presentation</li>
+            <li data-k="svc1li5">A 45-minute handoff session</li>
           </ul>
         </div>
         <div class="service-card">
-          <span class="tag">Suscripción mensual · sin mínimos</span>
+          <span class="tag" data-k="svc2tag">Monthly subscription · no minimums</span>
           <h3>Micro Data Office</h3>
-          <p class="tagline">Tu equipo de datos, sin contratar a nadie — el dueño que le faltaba a tus datos.</p>
+          <p class="tagline" data-k="svc2tagline">Your data team, without hiring anyone — the owner your data was missing.</p>
           <ul>
-            <li>Soporte para dudas en minutos</li>
-            <li>Dashboards claros y siempre actualizados</li>
-            <li>Limpieza y organización de tus datos</li>
-            <li>Revisión mensual de indicadores</li>
-            <li>Iteración continua según tus prioridades</li>
+            <li data-k="svc2li1">Support with answers in minutes, not days</li>
+            <li data-k="svc2li2">Clear dashboards, always up to date</li>
+            <li data-k="svc2li3">Data cleanup and organization</li>
+            <li data-k="svc2li4">Monthly metrics review</li>
+            <li data-k="svc2li5">Ongoing iteration around your priorities</li>
           </ul>
         </div>
       </div>
 
       <div class="feature-strip">
-        <div><h5>Tus herramientas</h5><p>Trabajamos sobre lo que ya usas. Cero migraciones.</p></div>
-        <div><h5>Confidencialidad</h5><p>Acuerdo de confidencialidad y solo los datos necesarios.</p></div>
-        <div><h5>Tu equipo aprende</h5><p>Te dejamos sabiendo leer y sostener lo que entregamos.</p></div>
-        <div><h5>Sin letra chica</h5><p>Alcance por escrito antes de empezar.</p></div>
+        <div><h5 data-k="feat1h">Your tools</h5><p data-k="feat1p">We work with what you already use. Zero migrations.</p></div>
+        <div><h5 data-k="feat2h">Confidentiality</h5><p data-k="feat2p">An NDA, and only the data we actually need.</p></div>
+        <div><h5 data-k="feat3h">Your team learns</h5><p data-k="feat3p">We leave your team able to read and maintain what we build.</p></div>
+        <div><h5 data-k="feat4h">No fine print</h5><p data-k="feat4p">Scope in writing before we start.</p></div>
       </div>
 
-      <p class="invest-note"><strong>Inversión.</strong> Definimos alcance e inversión juntos en la sesión de diagnóstico. Empezamos por el entregable que más mueve la aguja, no por el paquete más grande: empieza pequeño y escala si funciona.</p>
+      <p class="invest-note" data-k="investNote"><strong>Investment.</strong> We scope it together in the diagnostic session. We start with whatever moves the needle most, not the biggest package — start small, scale if it works.</p>
 
-      <h4 style="text-align:center; margin-bottom:6px;">Cómo trabajamos — tres pasos, sin proyectos eternos</h4>
+      <h4 style="text-align:center; margin-bottom:6px;" data-k="processH">How we work — three steps, no endless projects</h4>
       <div class="process">
-        <div class="process-step"><div class="node"></div><span class="when">Semana 0</span><h5>1 · Entender</h5><p>Escuchamos tu negocio y revisamos tus reportes actuales. Salimos con las 3 decisiones que más valor generarían hoy.</p></div>
-        <div class="process-step"><div class="node"></div><span class="when">Días, no meses</span><h5>2 · Construir</h5><p>Diseñamos el reporte, dashboard o narrativa que responde a esas decisiones, con un dueño claro de que la respuesta llegue a tiempo.</p></div>
-        <div class="process-step"><div class="node"></div><span class="when">Continuo</span><h5>3 · Transformar</h5><p>Entregamos, dejamos a tu equipo sabiendo leerlo y ajustamos con base en el uso real, no en supuestos.</p></div>
+        <div class="process-step"><div class="node"></div><span class="when" data-k="p1when">Week 0</span><h5 data-k="p1h">1 · Understand</h5><p data-k="p1p">We listen to your business and review your current reports. We walk out with the 3 decisions that would create the most value today.</p></div>
+        <div class="process-step"><div class="node"></div><span class="when" data-k="p2when">Days, not months</span><h5 data-k="p2h">2 · Build</h5><p data-k="p2p">We build the report, dashboard, or narrative that answers those decisions, with someone clearly on the hook for it landing on time.</p></div>
+        <div class="process-step"><div class="node"></div><span class="when" data-k="p3when">Ongoing</span><h5 data-k="p3h">3 · Transform</h5><p data-k="p3p">We hand it off, make sure your team can read it, and tune it based on real usage, not assumptions.</p></div>
       </div>
 
       <div class="deliv-faq">
         <div>
-          <h4>Entregables típicos</h4>
+          <h4 data-k="delivH">Typical deliverables</h4>
           <ul class="deliv-list">
-            <li>Ventas por equipo, en tiempo real — dejas de esperar el cierre de mes para reaccionar.</li>
-            <li>Funnel con alertas automáticas — te enteras de la fuga cuando todavía puedes corregirla.</li>
-            <li>Metas vs. resultados, sin vueltas — una pantalla, una conclusión, una acción.</li>
-            <li>Un responsable claro por indicador — sabes a quién preguntar y en cuánto tiempo tendrás respuesta.</li>
+            <li data-k="deliv1">Sales by team, in real time — stop waiting for month-end to react.</li>
+            <li data-k="deliv2">A funnel with automatic alerts — catch the leak while you can still fix it.</li>
+            <li data-k="deliv3">Targets vs. results, no back-and-forth — one screen, one takeaway, one action.</li>
+            <li data-k="deliv4">A clear owner per metric — you know who to ask, and how fast you'll hear back.</li>
           </ul>
-          <p class="deliv-note">Ejemplos de entregables del servicio. XIA es una práctica nueva: nuestros primeros clientes construyen el portafolio con nosotros — mientras tanto, ve proyectos de demostración reales en <a href="#portafolio">el portafolio</a>.</p>
+          <p class="deliv-note" data-k="delivNote">Examples of what the service delivers. XIA is a new practice: our first clients help build the portfolio with us — in the meantime, see real demo projects in <a href="#portafolio">the portfolio</a>.</p>
         </div>
         <div>
-          <h4>Lo que suelen preguntarnos</h4>
+          <h4 data-k="faqH">What people usually ask</h4>
           <details open>
-            <summary>¿Qué necesito para empezar?</summary>
-            <p>Tus reportes actuales (Excel, CRM o dashboards) y 15 minutos.</p>
+            <summary data-k="faq1q">What do I need to get started?</summary>
+            <p data-k="faq1a">Your current reports (Excel, CRM, or dashboards), and 15 minutes.</p>
           </details>
           <details>
-            <summary>¿Pueden trabajar con mis herramientas?</summary>
-            <p>Sí. Nos adaptamos a lo que ya usas; no te vendemos software.</p>
+            <summary data-k="faq2q">Can you work with the tools I already have?</summary>
+            <p data-k="faq2a">Yes. We adapt to what you're already using — we're not selling you software.</p>
           </details>
           <details>
-            <summary>¿Cuándo veo resultados?</summary>
-            <p>En días. Priorizamos las decisiones que no pueden esperar.</p>
+            <summary data-k="faq3q">When do I see results?</summary>
+            <p data-k="faq3a">In days. We prioritize the decisions that can't wait.</p>
           </details>
           <details>
-            <summary>¿Hay compromiso de permanencia?</summary>
-            <p>No. Empezamos pequeño y escalamos solo si te sirve.</p>
+            <summary data-k="faq4q">Is there a minimum commitment?</summary>
+            <p data-k="faq4a">No. We start small and scale only if it's working for you.</p>
           </details>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PORTAFOLIO -->
+  <!-- PORTFOLIO -->
   <section class="portfolio" id="portafolio">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">05 · El portafolio</span>
-        <h2>13 proyectos que muestran cómo trabajamos.</h2>
-        <p class="lede prose">XIA es una práctica nueva — todavía sin clientes que citar. En vez de inventar casos, construimos 13 proyectos de demostración con código funcional y datos sintéticos, uno por cada tipo de entregable que ofrecemos. Esto es honesto sobre lo que es (una demo), no un caso de cliente real.</p>
+        <span class="eyebrow" data-k="eyebrow5">05 · The portfolio</span>
+        <h2 data-k="pfH2">13 projects that show how we work.</h2>
+        <p class="lede prose" data-k="pfLede">XIA is a new practice — no client names to cite yet. Instead of making up case studies, we built 13 demo projects with working code and synthetic data, one for each kind of deliverable we offer. It's upfront about what it is (a demo), not a real client case.</p>
       </div>
 
       <div class="proj-grid">
         <div class="proj-card">
           <span class="pillar">Data Foundation</span>
-          <h4>Data Health Check</h4>
-          <p>Un score de calidad por tabla y el plan de qué corregir primero — y por qué.</p>
+          <h4 data-k="pf1h">Data Health Check</h4>
+          <p data-k="pf1p">A quality score per table, and a plan for what to fix first — and why.</p>
         </div>
         <div class="proj-card">
           <span class="pillar">Data Foundation</span>
-          <h4>Consolidación de Fuente de Verdad</h4>
-          <p>Tres Excels de tres sucursales, un solo número correcto.</p>
+          <h4 data-k="pf2h">Single Source of Truth</h4>
+          <p data-k="pf2p">Three spreadsheets from three locations, one number everyone trusts.</p>
         </div>
         <div class="proj-card">
           <span class="pillar">Data Analysis</span>
-          <h4>Reporte Ejecutivo Mensual</h4>
-          <p>El entregable insignia: qué pasó, por qué, y qué hacer — en una sesión de 15 min.</p>
+          <h4 data-k="pf3h">Monthly Executive Report</h4>
+          <p data-k="pf3p">The flagship deliverable: what happened, why, and what to do — in a 15-minute session.</p>
         </div>
         <div class="proj-card">
           <span class="pillar">Advanced Analytics</span>
-          <h4>Predicción de Riesgo de Churn</h4>
-          <p>Modelo de ML que dice qué cliente se va y por qué, con tiempo para retenerlo.</p>
+          <h4 data-k="pf4h">Churn Risk Prediction</h4>
+          <p data-k="pf4p">An ML model that flags which customers are about to leave, and why — with time to act.</p>
         </div>
       </div>
 
-      <p class="portfolio-note">Todos los datasets son 100% sintéticos, generados con semillas fijas — nunca datos de un cliente real. Cada proyecto incluye el código de generación, el análisis completo y un dashboard interactivo que se abre en cualquier navegador.</p>
+      <p class="portfolio-note" data-k="pfNote">Every dataset is 100% synthetic, generated with fixed seeds — never real client data. Each project ships with the generation code, the full analysis, and an interactive dashboard that opens in any browser.</p>
 
       <div class="portfolio-cta">
-        <a class="btn btn-gold" href="https://ddloyo.github.io/portfolio/" target="_blank" rel="noopener">Ver los 13 proyectos completos →</a>
+        <a class="btn btn-gold" href="https://ddloyo.github.io/portfolio/" target="_blank" rel="noopener" data-k="pfCta">See all 13 projects →</a>
       </div>
     </div>
   </section>
@@ -576,13 +592,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA FINAL -->
   <section class="cta-final" id="contacto">
     <div class="container">
-      <div class="cta-num">30<small>Min · sesión<br>de diagnóstico</small></div>
+      <div class="cta-num">30<small data-k="ctaNumSmall">Min · diagnostic<br>session</small></div>
       <div class="cta-mid">
-        <h3>¿Listo para poner un dueño en tus datos?</h3>
-        <p>Revisamos tus reportes y te dejamos 3 recomendaciones aplicables — uses o no el servicio.</p>
+        <h3 data-k="ctaH3">Ready to put an owner on your data?</h3>
+        <p data-k="ctaP">We'll review your reports and leave you 3 recommendations you can act on — whether or not you use the service.</p>
       </div>
       <div class="cta-right">
-        <a class="btn btn-gold" href="https://wa.me/525535666166?text=Hola%2C%20quiero%20agendar%20mi%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20con%20XIA" target="_blank" rel="noopener">Agendar mi diagnóstico →</a>
+        <a class="btn btn-gold" id="waCta" href="https://wa.me/525535666166?text=Hi%2C%20I%27d%20like%20to%20book%20a%20diagnostic%20session%20with%20XIA" target="_blank" rel="noopener" data-k="ctaBtn">Book my diagnostic →</a>
         <div class="contact-inline">
           <a href="mailto:xianalytics20@gmail.com">xianalytics20@gmail.com</a>
           <a href="https://wa.me/525535666166" target="_blank" rel="noopener">WhatsApp +52 55 3566 6166</a>
@@ -595,9 +611,214 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="site">
   <div class="container">
     <span>© 2026 XIA · Insights × Analytics</span>
-    <span><a href="https://ddloyo.github.io/portfolio/" target="_blank" rel="noopener">Portafolio de proyectos</a></span>
+    <span><a href="https://ddloyo.github.io/portfolio/" target="_blank" rel="noopener" data-k="footerLink">Project portfolio</a></span>
   </div>
 </footer>
+
+<script>
+  var I18N = {
+    en: {
+      nav1:"Problem", nav2:"Evidence", nav3:"Services", nav4:"Portfolio", navCta:"Book a diagnostic",
+      h1a:"Ask Monday.", h1b:"Know by Thursday.", subhead:"By Friday, you've already decided without it.",
+      heroBody:"It's not a data problem. It's an ownership problem — nobody's job is to turn your data into an answer before the decision gets made without it. XIA puts <strong>a fractional owner</strong> on your data, so the answer lands while it still matters.",
+      tlCap:"The real life of a question · reported by sales and leadership teams, Aug 2026",
+      tlLands:"the answer lands", tlDecided:"you've already decided",
+      dayMon:"MON", dayTue:"TUE", dayWed:"WED", dayThu:"THU", dayFri:"FRI",
+      forWhom:"Who this is for", seg1h:"Growing SMBs", seg1p:"You've got the data. Not a timely answer.",
+      seg2h:"Sales teams", seg2p:"Making weekly calls on numbers that show up late.",
+      seg3h:"Leadership without a data team", seg3p:"Hiring in-house isn't the next move yet.",
+      heroFootLine:"Data storytelling · Dashboards · Actionable analytics — first diagnostic session, on us.",
+      eyebrow2:"02 · The problem", probH2:"Every symptom points to the same empty seat.",
+      probLede:"It's not a data gap — it's an ownership gap. The question gets asked Monday. The answer shows up Thursday. By Friday, the decision's already been made without it. That's almost verbatim what we heard across more than ten conversations with sales, leadership, and finance teams.",
+      sym1:"Every team walks in with its own number, and the meeting turns into a fight over whose is right.",
+      sym2:"The weekly report takes hours to build — and by the time it's ready, the situation has already moved on.",
+      sym3:"Up to 3 days for a simple status update, even after investing in CRM and dashboards.",
+      sym4:"You know something dropped. You don't know why, or what to do about it.",
+      sym5:"Nobody owns turning data into an answer: IT won't take it on, and the business team has neither the time nor the mandate to.",
+      sym6:"Hiring a full data team in-house still doesn't pencil out.",
+      shiftCaption:"What changes when someone owns it",
+      shift1a:"Reports on what already happened", shift1b:"Analysis that tells you what's next",
+      shift2a:"Questions that take days to answer", shift2b:"Answers the same day you need them",
+      shift3a:"Everyone with their own version of the truth", shift3b:"One owner, one source you can trust",
+      shift4a:"Numbers with no context", shift4b:"A story: cause, effect, and what to do",
+      shift5a:"Hiring and training a team", shift5b:"An on-demand data team, owned from day one",
+      fitYesH:"This is for you if", fitYes1:"You're already generating data and reports, even if they're scattered.",
+      fitYes2:"You need to decide this week, not next quarter.", fitYes3:"You want a timely answer, not just another dashboard.",
+      fitNoH:"Probably not yet, if", fitNo1:"You're looking to migrate systems or roll out an ERP.",
+      fitNo2:"You're not yet capturing data from your operation.", fitNo3:"You want a predictive model before the basics are in order.",
+      pullQuote:"We don't sell dashboards. We sell the moment an answer still mattered.",
+      eyebrow3:"03 · The evidence", evH2:"The cost of no ownership, measured.",
+      stat1big:"3 in 10", stat1text:"Seven out of ten dashboards you're already paying for are running unread.",
+      stat1src:"Source: Gartner — real-world BI tool adoption",
+      stat2text:"of business decisions are made on gut feel, with no data behind them.",
+      stat2src:"Source: Domo — State of Data Culture",
+      stat3big:"3 days", stat3text:"is how long a simple status update takes today, across the teams we've talked to.",
+      stat3src:"Source: XIA field conversations, Aug 2026 (n=10+)",
+      evCallout:"These three patterns repeat across industries and company sizes: the tool is already paid for; the ownership isn't. That's the exact gap XIA exists to close.",
+      evGo:"Next → how we fix it",
+      eyebrow4:"04 · The approach", svcH2:"Two ways to put an owner on your data.",
+      svc1tag:"One-off project · first version in days", svc1tagline:"Your report, turned into the decision — in time to make it.",
+      svc1li1:"Audit of your current reports", svc1li2:"1 visual report with in-depth analysis",
+      svc1li3:"A clear narrative: what's happening, why, and what to do", svc1li4:"An executive-ready presentation",
+      svc1li5:"A 45-minute handoff session",
+      svc2tag:"Monthly subscription · no minimums", svc2tagline:"Your data team, without hiring anyone — the owner your data was missing.",
+      svc2li1:"Support with answers in minutes, not days", svc2li2:"Clear dashboards, always up to date",
+      svc2li3:"Data cleanup and organization", svc2li4:"Monthly metrics review", svc2li5:"Ongoing iteration around your priorities",
+      feat1h:"Your tools", feat1p:"We work with what you already use. Zero migrations.",
+      feat2h:"Confidentiality", feat2p:"An NDA, and only the data we actually need.",
+      feat3h:"Your team learns", feat3p:"We leave your team able to read and maintain what we build.",
+      feat4h:"No fine print", feat4p:"Scope in writing before we start.",
+      investNote:"<strong>Investment.</strong> We scope it together in the diagnostic session. We start with whatever moves the needle most, not the biggest package — start small, scale if it works.",
+      processH:"How we work — three steps, no endless projects",
+      p1when:"Week 0", p1h:"1 · Understand", p1p:"We listen to your business and review your current reports. We walk out with the 3 decisions that would create the most value today.",
+      p2when:"Days, not months", p2h:"2 · Build", p2p:"We build the report, dashboard, or narrative that answers those decisions, with someone clearly on the hook for it landing on time.",
+      p3when:"Ongoing", p3h:"3 · Transform", p3p:"We hand it off, make sure your team can read it, and tune it based on real usage, not assumptions.",
+      delivH:"Typical deliverables",
+      deliv1:"Sales by team, in real time — stop waiting for month-end to react.",
+      deliv2:"A funnel with automatic alerts — catch the leak while you can still fix it.",
+      deliv3:"Targets vs. results, no back-and-forth — one screen, one takeaway, one action.",
+      deliv4:"A clear owner per metric — you know who to ask, and how fast you'll hear back.",
+      delivNote:"Examples of what the service delivers. XIA is a new practice: our first clients help build the portfolio with us — in the meantime, see real demo projects in <a href=\"#portafolio\">the portfolio</a>.",
+      faqH:"What people usually ask",
+      faq1q:"What do I need to get started?", faq1a:"Your current reports (Excel, CRM, or dashboards), and 15 minutes.",
+      faq2q:"Can you work with the tools I already have?", faq2a:"Yes. We adapt to what you're already using — we're not selling you software.",
+      faq3q:"When do I see results?", faq3a:"In days. We prioritize the decisions that can't wait.",
+      faq4q:"Is there a minimum commitment?", faq4a:"No. We start small and scale only if it's working for you.",
+      eyebrow5:"05 · The portfolio", pfH2:"13 projects that show how we work.",
+      pfLede:"XIA is a new practice — no client names to cite yet. Instead of making up case studies, we built 13 demo projects with working code and synthetic data, one for each kind of deliverable we offer. It's upfront about what it is (a demo), not a real client case.",
+      pf1h:"Data Health Check", pf1p:"A quality score per table, and a plan for what to fix first — and why.",
+      pf2h:"Single Source of Truth", pf2p:"Three spreadsheets from three locations, one number everyone trusts.",
+      pf3h:"Monthly Executive Report", pf3p:"The flagship deliverable: what happened, why, and what to do — in a 15-minute session.",
+      pf4h:"Churn Risk Prediction", pf4p:"An ML model that flags which customers are about to leave, and why — with time to act.",
+      pfNote:"Every dataset is 100% synthetic, generated with fixed seeds — never real client data. Each project ships with the generation code, the full analysis, and an interactive dashboard that opens in any browser.",
+      pfCta:"See all 13 projects →",
+      ctaNumSmall:"Min · diagnostic<br>session", ctaH3:"Ready to put an owner on your data?",
+      ctaP:"We'll review your reports and leave you 3 recommendations you can act on — whether or not you use the service.",
+      ctaBtn:"Book my diagnostic →", footerLink:"Project portfolio",
+      metaDesc:"XIA puts a fractional owner on your data, so the answer lands while it still matters. Data storytelling, dashboards, and actionable analytics for growing SMBs.",
+      waHref:"https://wa.me/525535666166?text=Hi%2C%20I%27d%20like%20to%20book%20a%20diagnostic%20session%20with%20XIA",
+      tlSvg:"Timeline: the question gets asked Monday, the answer lands Thursday, by Friday the decision is already made without it",
+      statSvg1:"7 out of 10 dashboards run with nobody reading them",
+      statSvg2:"55% of business decisions are made on gut feel, with no data behind them",
+      statSvg3:"3 days is how long a simple status update takes today"
+    },
+    es: {
+      nav1:"Problema", nav2:"Evidencia", nav3:"Servicios", nav4:"Portafolio", navCta:"Agendar diagnóstico",
+      h1a:"Preguntas un lunes.", h1b:"Responde el jueves.", subhead:"El viernes ya decidiste sin ella.",
+      heroBody:"No es que falten datos. Es que nadie es dueño de traducirlos en una respuesta antes de que la decisión se tome sin ella. XIA pone <strong>un dueño fraccional</strong> a tus datos — para que la respuesta llegue a tiempo de importar.",
+      tlCap:"Ciclo real de una pregunta · reportado por equipos comerciales y de dirección, ago 2026",
+      tlLands:"la respuesta llega", tlDecided:"ya decidiste sin ella",
+      dayMon:"LUN", dayTue:"MAR", dayWed:"MIÉ", dayThu:"JUE", dayFri:"VIE",
+      forWhom:"Para quién es", seg1h:"PyMEs en crecimiento", seg1p:"Ya tienes datos, no una respuesta a tiempo.",
+      seg2h:"Equipos comerciales", seg2p:"Deciden cada semana con números que llegan tarde.",
+      seg3h:"Dirección sin área de datos", seg3p:"Contratar equipo interno aún no aplica.",
+      heroFootLine:"Data storytelling · Dashboards · Analítica accionable — primera sesión de diagnóstico, sin costo.",
+      eyebrow2:"02 · El problema", probH2:"Cada síntoma señala al mismo puesto vacío.",
+      probLede:"No es falta de información: es falta de dueño. La pregunta se hace un lunes. La respuesta llega el jueves. Para el viernes, ya tomaste la decisión sin ella. Esto es lo que escuchamos, casi palabra por palabra, en más de diez conversaciones con equipos comerciales, dirección y finanzas.",
+      sym1:"Cada área llega con su propio número y la reunión se va en discutir cuál es el correcto.",
+      sym2:"El reporte semanal toma horas en armarse… y para cuando está listo, ya cambió la situación.",
+      sym3:"Hasta 3 días para conseguir un estatus simple, aunque ya invertiste en CRM y dashboards.",
+      sym4:"Sabes que algo bajó, pero no por qué ni qué hacer al respecto.",
+      sym5:"Nadie es dueño de traducir los datos en una respuesta: TI no se responsabiliza, el área no tiene el tiempo ni el rol para hacerlo.",
+      sym6:"Contratar un equipo de datos interno todavía no se justifica.",
+      shiftCaption:"Así se ve el cambio de dueño",
+      shift1a:"Reportes que describen lo que pasó", shift1b:"Análisis que recomienda qué sigue",
+      shift2a:"Preguntas que tardan días en respuesta", shift2b:"Respuestas el mismo día que se necesitan",
+      shift3a:"Cada quien con su versión de la verdad", shift3b:"Un solo dueño, una sola fuente confiable",
+      shift4a:"Números sin contexto", shift4b:"Una historia: causa, efecto y decisión",
+      shift5a:"Contratar y entrenar un equipo", shift5b:"Un equipo de datos a demanda, con dueño desde el día uno",
+      fitYesH:"Sí, esto es para ti", fitYes1:"Ya generas datos y reportes, aunque estén dispersos.",
+      fitYes2:"Necesitas decidir esta semana, no el próximo trimestre.", fitYes3:"Quieres una respuesta a tiempo, no solo un dashboard más.",
+      fitNoH:"Probablemente no, todavía", fitNo1:"Buscas migrar sistemas o instalar un ERP.",
+      fitNo2:"Aún no capturas información de tu operación.", fitNo3:"Esperas un modelo predictivo antes de ordenar lo básico.",
+      pullQuote:"No vendemos dashboards. Vendemos el momento en que la respuesta todavía importaba.",
+      eyebrow3:"03 · La evidencia", evH2:"El costo de no tener dueño, medido.",
+      stat1big:"3 de 10", stat1text:"Siete de cada diez tableros que ya pagas están corriendo sin que nadie los lea.",
+      stat1src:"Fuente: Gartner — adopción real de herramientas de BI",
+      stat2text:"de las decisiones de negocio se toman «de panza», sin dato que las respalde.",
+      stat2src:"Fuente: Domo — State of Data Culture",
+      stat3big:"3 días", stat3text:"es lo que tarda hoy un estatus simple, en los equipos con los que hemos hablado.",
+      stat3src:"Fuente: conversaciones de campo XIA, ago 2026 (n=10+)",
+      evCallout:"Estos tres patrones se repiten cruzando industria y tamaño de empresa: la herramienta ya está pagada, la gobernanza no. Es exactamente la brecha que XIA existe para cerrar.",
+      evGo:"Siguiente → cómo lo resolvemos",
+      eyebrow4:"04 · La manera", svcH2:"Dos formas de poner un dueño en tus datos.",
+      svc1tag:"Proyecto puntual · primera versión en días", svc1tagline:"Tu reporte, convertido en la decisión — a tiempo para tomarla.",
+      svc1li1:"Diagnóstico de tus reportes actuales", svc1li2:"1 reporte visual con análisis a fondo",
+      svc1li3:"Narrativa clara: qué pasa, por qué y qué hacer", svc1li4:"Presentación ejecutiva lista para usar",
+      svc1li5:"Sesión de entrega de 45 minutos",
+      svc2tag:"Suscripción mensual · sin mínimos", svc2tagline:"Tu equipo de datos, sin contratar a nadie — el dueño que le faltaba a tus datos.",
+      svc2li1:"Soporte para dudas en minutos", svc2li2:"Dashboards claros y siempre actualizados",
+      svc2li3:"Limpieza y organización de tus datos", svc2li4:"Revisión mensual de indicadores", svc2li5:"Iteración continua según tus prioridades",
+      feat1h:"Tus herramientas", feat1p:"Trabajamos sobre lo que ya usas. Cero migraciones.",
+      feat2h:"Confidencialidad", feat2p:"Acuerdo de confidencialidad y solo los datos necesarios.",
+      feat3h:"Tu equipo aprende", feat3p:"Te dejamos sabiendo leer y sostener lo que entregamos.",
+      feat4h:"Sin letra chica", feat4p:"Alcance por escrito antes de empezar.",
+      investNote:"<strong>Inversión.</strong> Definimos alcance e inversión juntos en la sesión de diagnóstico. Empezamos por el entregable que más mueve la aguja, no por el paquete más grande: empieza pequeño y escala si funciona.",
+      processH:"Cómo trabajamos — tres pasos, sin proyectos eternos",
+      p1when:"Semana 0", p1h:"1 · Entender", p1p:"Escuchamos tu negocio y revisamos tus reportes actuales. Salimos con las 3 decisiones que más valor generarían hoy.",
+      p2when:"Días, no meses", p2h:"2 · Construir", p2p:"Diseñamos el reporte, dashboard o narrativa que responde a esas decisiones, con un dueño claro de que la respuesta llegue a tiempo.",
+      p3when:"Continuo", p3h:"3 · Transformar", p3p:"Entregamos, dejamos a tu equipo sabiendo leerlo y ajustamos con base en el uso real, no en supuestos.",
+      delivH:"Entregables típicos",
+      deliv1:"Ventas por equipo, en tiempo real — dejas de esperar el cierre de mes para reaccionar.",
+      deliv2:"Funnel con alertas automáticas — te enteras de la fuga cuando todavía puedes corregirla.",
+      deliv3:"Metas vs. resultados, sin vueltas — una pantalla, una conclusión, una acción.",
+      deliv4:"Un responsable claro por indicador — sabes a quién preguntar y en cuánto tiempo tendrás respuesta.",
+      delivNote:"Ejemplos de entregables del servicio. XIA es una práctica nueva: nuestros primeros clientes construyen el portafolio con nosotros — mientras tanto, ve proyectos de demostración reales en <a href=\"#portafolio\">el portafolio</a>.",
+      faqH:"Lo que suelen preguntarnos",
+      faq1q:"¿Qué necesito para empezar?", faq1a:"Tus reportes actuales (Excel, CRM o dashboards) y 15 minutos.",
+      faq2q:"¿Pueden trabajar con mis herramientas?", faq2a:"Sí. Nos adaptamos a lo que ya usas; no te vendemos software.",
+      faq3q:"¿Cuándo veo resultados?", faq3a:"En días. Priorizamos las decisiones que no pueden esperar.",
+      faq4q:"¿Hay compromiso de permanencia?", faq4a:"No. Empezamos pequeño y escalamos solo si te sirve.",
+      eyebrow5:"05 · El portafolio", pfH2:"13 proyectos que muestran cómo trabajamos.",
+      pfLede:"XIA es una práctica nueva — todavía sin clientes que citar. En vez de inventar casos, construimos 13 proyectos de demostración con código funcional y datos sintéticos, uno por cada tipo de entregable que ofrecemos. Esto es honesto sobre lo que es (una demo), no un caso de cliente real.",
+      pf1h:"Data Health Check", pf1p:"Un score de calidad por tabla y el plan de qué corregir primero — y por qué.",
+      pf2h:"Consolidación de Fuente de Verdad", pf2p:"Tres Excels de tres sucursales, un solo número correcto.",
+      pf3h:"Reporte Ejecutivo Mensual", pf3p:"El entregable insignia: qué pasó, por qué, y qué hacer — en una sesión de 15 min.",
+      pf4h:"Predicción de Riesgo de Churn", pf4p:"Modelo de ML que dice qué cliente se va y por qué, con tiempo para retenerlo.",
+      pfNote:"Todos los datasets son 100% sintéticos, generados con semillas fijas — nunca datos de un cliente real. Cada proyecto incluye el código de generación, el análisis completo y un dashboard interactivo que se abre en cualquier navegador.",
+      pfCta:"Ver los 13 proyectos completos →",
+      ctaNumSmall:"Min · sesión<br>de diagnóstico", ctaH3:"¿Listo para poner un dueño en tus datos?",
+      ctaP:"Revisamos tus reportes y te dejamos 3 recomendaciones aplicables — uses o no el servicio.",
+      ctaBtn:"Agendar mi diagnóstico →", footerLink:"Portafolio de proyectos",
+      metaDesc:"XIA pone un dueño fraccional a tus datos, para que la respuesta llegue a tiempo de importar. Data storytelling, dashboards y analítica accionable para PyMEs en crecimiento.",
+      waHref:"https://wa.me/525535666166?text=Hola%2C%20quiero%20agendar%20mi%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20con%20XIA",
+      tlSvg:"Línea de tiempo: la pregunta se hace el lunes, la respuesta llega el jueves, el viernes ya se decidió sin ella",
+      statSvg1:"7 de cada 10 tableros corren sin que nadie los lea",
+      statSvg2:"55% de las decisiones de negocio se toman de panza, sin dato que las respalde",
+      statSvg3:"3 días tarda hoy un estatus simple"
+    }
+  };
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.title = "XIA · Insights × Analytics";
+    var dict = I18N[lang];
+
+    document.querySelectorAll('[data-k]').forEach(function(el){
+      var key = el.getAttribute('data-k');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-k-attr]').forEach(function(el){
+      var parts = el.getAttribute('data-k-attr').split(':');
+      var attr = parts[0], key = parts[1];
+      if (dict[key] !== undefined) el.setAttribute(attr, dict[key]);
+    });
+
+    document.getElementById('metaDesc').setAttribute('content', dict.metaDesc);
+    document.getElementById('waCta').setAttribute('href', dict.waHref);
+
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+
+    try { localStorage.setItem('xia-lang', lang); } catch (e) {}
+  }
+
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('xia-lang'); } catch (e) {}
+    setLang(saved === 'es' ? 'es' : 'en');
+  })();
+</script>
 
 </body>
 </html>
